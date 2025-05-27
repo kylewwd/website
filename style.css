@@ -1,0 +1,366 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: #000000;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-top: 40px;
+    width: 80%;
+}
+
+h1 {
+    font-size: 3em;
+    background: linear-gradient(to right, #8A2BE2, #FFFFFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #CCCCCC;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(4px);
+    animation: fadeInUnblurUp 0.6s ease-out 0s forwards;
+}
+
+.gradient-line {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, #8A2BE2, #FFFFFF);
+    width: 0%; 
+    opacity: 0;
+    margin-bottom: 40px;
+    animation: growWidthAndFadeIn 1.2s ease-out 0.1s forwards;
+}
+
+@keyframes growWidthAndFadeIn {
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.intro-box {
+    background-color: #F0F0F0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    max-width: 800px;
+    text-align: left;
+    color: #000000;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(4px);
+    animation: fadeInUnblurUp 0.6s ease-out 0.3s forwards;
+}
+
+footer {
+    margin-top: 40px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.clickable-boxes {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: #F0F0F0;
+    color: #000000;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    width: 375px;
+    margin: 10px;
+    transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+    text-decoration: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(4px);
+    animation: fadeInUnblurUp 0.6s ease-out forwards;
+    will-change: opacity, transform, filter, box-shadow;
+}
+
+.box-inner-content {
+    display: block;
+}
+
+.box:nth-child(1) {
+    animation-delay: 0.5s;
+}
+.box:nth-child(2) {
+    animation-delay: 0.7s;
+}
+.box:nth-child(3) {
+    animation-delay: 0.9s;
+}
+.box:nth-child(4) {
+    animation-delay: 1.1s;
+}
+
+/* Basic hover rule for during animation */
+.box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-3px) scale(1.03);
+}
+
+/* Hover rule for after animation completes */
+.box.animation-completed:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important; 
+    transform: translateY(-5px) scale(1.05) !important;
+}
+
+@keyframes fadeInUnblurUp {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+@media (max-width: 800px) {
+    .clickable-boxes {}
+    .box {
+        width: 90%;
+        max-width: 375px;
+    }
+}
+
+/* Styles for widgets.html */
+.page-nav {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(4px);
+    animation: fadeInUnblurUp 0.6s ease-out 0.2s forwards;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.widgets-main {
+    width: 80%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.widgets-title {
+    font-size: 2.5em;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(4px);
+    animation: fadeInUnblurUp 0.6s ease-out 0.3s forwards;
+}
+
+.widget-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* .widget-placeholder uses .box for base styling and initial animation */
+/* We need to ensure the :nth-child delays for .box are distinct or handled if these also use .box */
+/* For simplicity, the widgets page script.js will handle .box animations on this page separately */
+
+.widget-placeholder h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333; /* Darker text for inside the off-white box */
+}
+
+.widget-placeholder p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Conway's Game of Life specific styles */
+#gol-grid-container {
+    display: grid;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    width: 100%; 
+    box-sizing: border-box; 
+    /* Let CSS handle columns based on a variable */
+    grid-template-columns: repeat(var(--gol-cols, 19), 1fr);
+    /* Height will be driven by cell aspect ratio and number of rows */
+}
+
+.gol-cell {
+    border: 1px solid #eee; 
+    background-color: #fff; 
+    cursor: pointer;
+    box-sizing: border-box; 
+    aspect-ratio: 1 / 1; /* Keep cells square */
+    /* width and height removed, will be set by grid track */
+}
+
+.gol-cell.alive {
+    background-color: #333; /* Live cell - dark color */
+}
+
+.gol-controls button {
+    background-color: #000000; /* Black background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Match title font */
+    font-size: 0.9em; /* Adjust size as needed */
+    font-weight: bold; /* Added bold */
+    transition: background-color 0.2s ease, transform 0.2s ease-out; /* Added transform transition */
+}
+
+.gol-controls button:hover {
+    background-color: #333; /* Darker black/grey on hover */
+    transform: scale(1.05); /* Pop up effect */
+}
+
+.gol-instructions {
+    font-size: 0.9em !important; /* Override general .widget-placeholder p if needed */
+    color: #666 !important;
+    margin-top: 10px;
+}
+
+/* Styles for Projects page (projects.html) */
+.projects-main { /* Can share styles with .widgets-main if identical */
+    width: 80%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.page-main-title { /* Generic class for main titles on subpages */
+    font-size: 2.5em;
+    color: #FFFFFF; 
+    margin-bottom: 30px;
+    text-align: center; 
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(4px);
+    animation: fadeInUnblurUp 0.6s ease-out 0.3s forwards;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.project-image {
+    width: 100%; /* Make image take full width of its container (.project-item) */
+    max-height: 200px; /* Limit height to prevent overly tall images */
+    object-fit: cover; /* Scale image to maintain aspect ratio while filling dimensions, cropping if necessary */
+    border-radius: 5px; /* Slightly rounded corners for the image */
+    margin-bottom: 15px; /* Space between image and project title (h3) */
+}
+
+/* .project-item uses .box for base styling and initial animation */
+.project-item h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project-item p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px; /* Space before the button */
+}
+
+.project-controls {
+    text-align: center; /* Center the button(s) */
+}
+
+.project-button, .paper-btn { /* Style for paper buttons and future project buttons */
+    display: inline-block; /* Needed for padding and margin on an <a> if used as button */
+    background-color: #000000; 
+    color: white !important; /* Important to override default link color */
+    border: none;
+    padding: 10px 15px;
+    margin-top: 5px; /* Space above button */
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    font-size: 0.9em; 
+    font-weight: bold; 
+    text-decoration: none; /* Remove underline from <a> tags styled as buttons */
+    transition: background-color 0.2s ease, transform 0.2s ease-out;
+}
+
+.project-button:hover, .paper-btn:hover {
+    background-color: #333; 
+    transform: scale(1.05); 
+}
+
+/* Style for "Open to Work" text on index.html - REMOVED */
+/*
+.open-to-work {
+    text-align: center;
+    margin-top: 30px; 
+    font-size: 1.1em;
+    color: #FFFFFF; 
+}
+
+.open-to-work strong {
+    font-weight: bold; 
+}
+*/ 

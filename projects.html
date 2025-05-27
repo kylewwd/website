@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Kyle Williams</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> 
+</head>
+<body>
+    <header>
+        <h1>Kyle Williams</h1> 
+        <p class="subtitle">AI & Software Engineer | Building Intelligent Solutions for a Better Future</p>
+        <hr class="gradient-line">
+        <nav class="page-nav">
+            <a href="index.html" class="nav-link">Home</a>
+        </nav>
+    </header>
+
+    <main class="projects-main projects-page-identifier"> <!-- Added projects-page-identifier for potential specific styling/JS -->
+        <h2 class="projects-title page-main-title">My Projects</h2> <!-- Used generic class for title styling -->
+        <div class="project-grid">
+            <div class="project-item box"> <!-- project-item can be used for project specific styles -->
+                <img src="Drone Team Image.jpeg" alt="TDOA Geolocation Project Image 1" class="project-image">
+                <img src="Drone Team Image 2.jpeg" alt="TDOA Geolocation Project Image 2" class="project-image">
+                <h3>TDOA Geolocation</h3>
+                <p>As a Signals Analysis Intern at Zeta Associates, I developed a Python and X-Midas program for TDOA geolocation using signals from 4 drones. I was responsible for coding and transmitting an encrypted BPSK signal and implemented parallelized cross-ambiguity functions for faster-than-real-time TDOA value calculation.</p>
+                <div class="project-controls">
+                    <a href="#" class="paper-btn project-button">Paper</a> <!-- Link to # for now -->
+                </div>
+            </div>
+            <div class="project-item box">
+                <img src="Pothole Image.png" alt="AI Pothole Detection Project Image 1" class="project-image">
+                <img src="Pothole Image 2.png" alt="AI Pothole Detection Project Image 2" class="project-image">
+                <h3>AI Pothole Detection</h3>
+                <p>For my senior design project, I was an AI Model and Data Developer on a team creating an app to live-identify potholes. I personally curated a dataset of 22,239 images and used YOLOv8 to train and implement the model, achieving a 0.656 mAP50. Our project was awarded best in computer science out of 33 teams.</p>
+                <div class="project-controls">
+                    <a href="Pothole Report.pdf" target="_blank" class="paper-btn project-button">Paper</a>
+                </div>
+            </div>
+            <div class="project-item box">
+                <img src="License Plate Image.png" alt="License Plate Identification Project Image 1" class="project-image">
+                <img src="License Plate Image 2.png" alt="License Plate Identification Project Image 2" class="project-image">
+                <h3>License Plate Identification</h3>
+                <p>I developed an AI model to first localize license plates in images and then identify the digits using EasyOCR. For this, I built a neural network in Python using NumPy and CV2, training it on a dataset of 2131 images.</p>
+                <div class="project-controls">
+                    <a href="License Plate Report.pdf" target="_blank" class="paper-btn project-button">Paper</a>
+                </div>
+            </div>
+            <div class="project-item box">
+                <!-- <img src="LLM Codegen Image.png" alt="OpenFHE Code Generation Project Image 1" class="project-image"> REMOVED -->
+                <img src="LLM Codegen Image 2.png" alt="OpenFHE Code Generation Project Image 2" class="project-image">
+                <h3>OpenFHE Code Generation</h3>
+                <p>To address the challenges new researchers faced with CKKS, I developed an LLM-powered agent to generate efficient and accurate OpenFHE code. This agent handled tasks like addition, multiplication, dot product, matrix multiplication, and convolutions from natural language inputs. The project incorporated inference-time reasoning optimizations, including specific prompting, decoding, self-improvement, and Retrieval-Augmented Generation (RAG) techniques. I evaluated its performance using various LLMs and metrics like Pass@k (for compilability and functionality) and CrystalBLEU, aiming to simplify FHE development.</p>
+                <div class="project-controls">
+                    <a href="LLM Codegen Report.pdf" target="_blank" class="paper-btn project-button">Paper</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html> 
